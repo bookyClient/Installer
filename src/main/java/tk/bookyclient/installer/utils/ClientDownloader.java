@@ -22,6 +22,7 @@ public class ClientDownloader {
 
     public static Double percentage = 0D;
     public static String downloadStage = "";
+    @SuppressWarnings("SpellCheckingInspection")
     private static final SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US);
 
     static {
@@ -115,6 +116,7 @@ public class ClientDownloader {
         }
     }
 
+    @SuppressWarnings("ThrowFromFinallyBlock")
     private static void download(URL url, File file) {
         percentage = 0D;
         BufferedInputStream inputStream = null;

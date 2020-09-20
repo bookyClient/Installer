@@ -6,7 +6,6 @@ import tk.bookyclient.installer.Boot;
 
 public enum Process {
 
-    STARTING(null),
     INSTALLING("startInstall"),
     FINISHED("finished"),
     ERRORED("errored"),
@@ -19,9 +18,6 @@ public enum Process {
     }
 
     public void set(String... args) {
-        if (functionName == null) return;
-
-        Boot.instance.process = this;
         String formattedArgs = String.join(", ", args);
         Platform.runLater(() -> Boot.instance.webView.getEngine().executeScript("javascript:" + functionName + "(" + formattedArgs + ")"));
     }

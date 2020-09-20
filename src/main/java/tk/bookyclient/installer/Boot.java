@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 import netscape.javascript.JSObject;
 import tk.bookyclient.installer.handler.FeedbackHandler;
 import tk.bookyclient.installer.handler.InstallerThread;
-import tk.bookyclient.installer.utils.Process;
 import tk.bookyclient.installer.utils.SharedConstants;
 
 import java.io.File;
@@ -21,10 +20,10 @@ import java.nio.file.Files;
 
 public class Boot extends Application {
 
-    public static final String VERSION = "1.0";
+    public static final String VERSION = "v1.1";
 
     public static void main(String[] args) {
-        System.out.println("Launching...");
+        System.out.println("Launching bookyClientInstall " + VERSION + "...");
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             if (InstallerThread.installing) {
@@ -46,7 +45,6 @@ public class Boot extends Application {
     public static Boot instance;
     private final FeedbackHandler feedbackHandler = new FeedbackHandler();
     public final WebView webView = new WebView();
-    public Process process = Process.STARTING;
 
     @Override
     public void start(Stage stage) {
