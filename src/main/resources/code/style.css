@@ -1,0 +1,74 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.container {
+  background: linear-gradient(
+      -180deg,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url("../assets/background.png") !important;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+#progress {
+  position: absolute;
+  width: 75%;
+  bottom: 5%;
+  left: 12.5%;
+
+  color: #FCFCFCB7;
+  border: 1px solid transparent;
+  border-radius: 0;
+  border: 3px solid;
+}
+
+#bar {
+  width: 0%;
+  height: 30px;
+  background-color: #09C643;
+}
+
+#bar-text {
+  text-align: center;
+  font-family: "Open Sans", "Helvetica", "Arial", "sans-serif";
+  font-size: 48px;
+  font-weight: 300;
+  color: white;
+
+  position: absolute;
+  width: 75%;
+  bottom: 15%;
+  left: 12.5%;
+}
+
+.content {
+  text-align: center;
+  padding-top: 3%;
+}
+
+.content span {
+  font-family: "Open Sans", "Helvetica", "Arial", "sans-serif";
+  font-size: 48px;
+  font-weight: 300;
+  color: white;
+}
+
+.invisible {
+  display: none;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="code/style.css" />
+    <link rel="stylesheet" type="text/css" href="code/font-styles.css" />
+    <link rel="stylesheet" type="text/css" href="code/button.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="process">
+          <span id="intro" class="noselect"
+            >Es werden einige Sachen vorbereitet...
+          </span>
+          <span id="load" class="invisible noselect"
+            >Der Client wird installiert, bitte warten...
+          </span>
+          <span id="done" class="invisible noselect"
+            >Die Installation ist fertig!
+          </span>
+          <span id="errored-info" class="invisible noselect"> </span>
+          <span id="errored" class="invisible">
+            <span class="noselect">
+              <br />Bitte joine unserem Discord,<br />
+              um das Problem zu lösen:
+            </span>
+            <br />bookyclient.tk/de/discord
+          </span>
+          <span id="already-installed" class="invisible noselect">
+            Du hast den Client schon installiert!<br />Er updated sich
+            automatisch!
+          </span>
+          <span id="close" class="invisible noselect">
+            <btn onclick="feedback.close()" class="btn">
+              Installer Schliessen
+            </btn>
+          </span>
+          <span id="reinstall" class="invisible noselect">
+            <btn onclick="feedback.reinstall()" class="btn">
+              Neuinstallieren
+            </btn>
+          </span>
+        </div>
+      </div>
+      <div class="invisible" id="percentage-bar">
+        <div id="progress">
+          <div id="bar"></div>
+        </div>
+        <div>
+          <div id="bar-text" class="noselect">Starten...</div>
+        </div>
+      </div>
+      <script src="code/jquery.min.js"></script>
+      <script src="code/script.js"></script>
+    </div>
+  </body>
+</html>
