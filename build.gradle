@@ -1,12 +1,11 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "6.0.0"
-    // id 'edu.sc.seis.launch4j' version '2.4.8'
     id 'application'
     id 'java'
 }
 
 group 'tk.bookyclient.installer'
-version '1.0-SNAPSHOT'
+version 'v1.2'
 
 repositories {
     mavenCentral()
@@ -27,24 +26,3 @@ jar {
         attributes 'Main-Class': 'tk.bookyclient.installer.Boot'
     }
 }
-
-/*
-launch4j {
-    jreMinVersion = '1.8.0'
-    outputDir = 'libs'
-    language = 'GERMAN'
-    copyright = '© bookyClient'
-    companyName = 'bookyClient'
-    windowTitle = 'bookyClient Installer'
-    productName = 'bookyClient Installer'
-    downloadUrl = 'https://youtu.be/dQw4w9WgXcQ/'
-    mainClassName = 'tk.bookyclient.installer.Boot'
-    supportUrl = 'https://bookyclient.tk/de/discord/'
-    icon = "${projectDir}/src/main/resources/assets/logo.ico"
-    messagesLauncherError = 'Es gab einen unbekannten Fehler!'
-    messagesInstanceAlreadyExists = 'Der Installer läuft schon!'
-    messagesJreVersionError = 'Du brauchst folgende Java Version:'
-    jar = "${buildDir}/libs/bookyClientInstaller-${project.version}-all.jar"
-    splashFileName = "${projectDir}/src/main/resources/assets/background.bmp"
-}
-*/
