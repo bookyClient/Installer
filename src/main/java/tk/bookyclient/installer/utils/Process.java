@@ -9,7 +9,9 @@ public enum Process {
     INSTALLING("startInstall"),
     FINISHED("finished"),
     ERRORED("errored"),
-    ALREADY_INSTALLED("alreadyInstalled");
+    ALREADY_INSTALLED("alreadyInstalled"),
+    REINSTALLING("reinstall"),
+    LAUNCHER_OPEN("launcherOpen");
 
     private final String functionName;
 

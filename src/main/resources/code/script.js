@@ -3,6 +3,9 @@ document.addEventListener("contextmenu", (event) => event.preventDefault());
 function startInstall() {
   $("#already-installed").fadeOut(0);
   $("#reinstall").fadeOut(0);
+  $("#launcher-open").fadeOut(0);
+  $("#restart").fadeOut(0);
+  $("#reinstalling").fadeOut(0);
   $("#intro").fadeOut(500, function () {
     $("#load").fadeIn(500);
     $("#percentage-bar").fadeIn(500);
@@ -17,10 +20,27 @@ function finished() {
   });
 }
 
+function reinstall() {
+  $("#already-installed").fadeOut(0);
+  $("#reinstall").fadeOut(0);
+  $("#reinstalling").fadeIn(500);
+}
+
 function alreadyInstalled() {
+  $("#launcher-open").fadeOut(0);
+  $("#restart").fadeOut(0);
+  $("#reinstalling").fadeOut(0);
   $("#intro").fadeOut(500, function () {
     $("#already-installed").fadeIn(500);
     $("#reinstall").delay(2000).fadeIn(500);
+  });
+}
+
+function launcherOpen() {
+  $("#reinstalling").fadeOut(0);
+  $("#intro").fadeOut(500, function () {
+    $("#launcher-open").fadeIn(500);
+    $("#restart").delay(2000).fadeIn(500);
   });
 }
 

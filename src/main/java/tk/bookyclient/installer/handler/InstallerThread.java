@@ -31,6 +31,9 @@ public class InstallerThread extends Thread {
             if (ClientDownloader.isInstalled() && !reinstall) {
                 System.out.println("Already installed!");
                 Process.ALREADY_INSTALLED.set();
+            } else if (ClientDownloader.isLauncherOpen()) {
+                System.out.println("Launcher open!");
+                Process.LAUNCHER_OPEN.set();
             } else {
                 installing = true;
                 if (ClientDownloader.isInstalled() && reinstall) {
@@ -46,6 +49,7 @@ public class InstallerThread extends Thread {
 
                 player.play();
                 player.setOnEndOfMedia(player::play);
+                player.setVolume(0.25);
 
                 System.out.println("Downloading JSON...");
                 ClientDownloader.downloadJSON();
@@ -56,19 +60,25 @@ public class InstallerThread extends Thread {
 
                 System.out.println("Finished!");
                 Process.FINISHED.set();
+
+                installing = false;
             }
             success = true;
         } catch (NoLinkException exception) {
             System.out.println("No Link available!");
             Utils.sleep(1000);
             Process.ERRORED.set("\"Der Link zum Download tut im Moment nicht!\"");
+
+            installing = false;
         } catch (Throwable throwable) {
             Utils.sleep(1000);
             throwable.printStackTrace();
             Process.ERRORED.set("\"" + throwable.getMessage() + "\"");
+
+            installing = false;
         } finally {
             while (player.getVolume() > 0) {
-                player.setVolume(player.getVolume() - 0.05);
+                player.setVolume(player.getVolume() - 0.0125);
                 Utils.sleep(150);
             }
             player.stop();
@@ -79,7 +89,6 @@ public class InstallerThread extends Thread {
                 Files.deleteIfExists(SharedConstants.CLIENT_FOLDER.toPath().toAbsolutePath());
             } catch (IOException ignored) {
             }
-            installing = false;
         }
     }
 }

@@ -9,11 +9,14 @@
     <div class="container">
       <div class="content">
         <div class="process">
-          <span id="intro" class="noselect"
-            >Es werden einige Sachen vorbereitet...
+          <span id="intro" class="noselect">
+            Es werden einige Sachen vorbereitet...
           </span>
-          <span id="load" class="invisible noselect"
-            >Der Client wird installiert, bitte warten...
+          <span id="launcher-open" class="invisible noselect">
+            Der Launcher ist offen! Bitte schließe ihn!
+          </span>
+          <span id="load" class="invisible noselect">
+            Der Client wird installiert, bitte warten...
           </span>
           <span id="done" class="invisible noselect"
             >Die Installation ist fertig!
@@ -30,6 +33,9 @@
             Du hast den Client schon installiert!<br />Er updated sich
             automatisch!
           </span>
+          <span id="reinstalling" class="invisible noselect">
+          Installiere Neu...
+          </span>
           <span id="close" class="invisible noselect">
             <btn onclick="feedback.close()" class="btn">
               Installer Schliessen
@@ -38,6 +44,11 @@
           <span id="reinstall" class="invisible noselect">
             <btn onclick="feedback.reinstall()" class="btn">
               Neuinstallieren
+            </btn>
+          </span>
+          <span id="restart" class="invisible noselect">
+            <btn onclick="feedback.restart()" class="btn">
+              Neustarten
             </btn>
           </span>
         </div>
