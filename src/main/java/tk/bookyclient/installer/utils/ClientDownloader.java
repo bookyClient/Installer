@@ -13,7 +13,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.UUID;
 
 public class ClientDownloader {
 
@@ -156,20 +159,6 @@ public class ClientDownloader {
     }
 
     public static boolean isLauncherOpen() {
-        try {
-            java.lang.Process execution = Runtime.getRuntime().exec("ps -e" + (EnumOS.getOS().equals(EnumOS.OSX) ? " -o command" : ""));
-            BufferedReader reader = new BufferedReader(new InputStreamReader(execution.getInputStream()));
-            List<String> processes = new ArrayList<>();
-
-            String line;
-            while ((line = reader.readLine()) != null) processes.add(line);
-
-            for (String process : processes)
-                if (process.toLowerCase().contains("minecraft-launc")) return true;
-                else if (process.toLowerCase().contains("minecraft launc")) return true;
-            return false;
-        } catch (Throwable throwable) {
-            throw new Error(throwable);
-        }
+        return EnumOS.isLauncherStarted();
     }
 }
