@@ -18,7 +18,7 @@ public class SharedConstants {
     public static final File VERSIONS_FOLDER = new File(SharedConstants.OS.getDirectory(), "versions");
     public static final File CLIENT_FOLDER = new File(VERSIONS_FOLDER, "bookyClient");
 
-    public static final String VERSIONS_URL = "https://bookyclient.tk/versions.txt";
+    public static final String VERSIONS_URL = "https://bookyclient.tk/versions-189.txt";
     public static final String ICON_URL = "https://bookyclient.tk/launcher-logo.txt";
     public static final String JSON_URL = "https://bookyclient.tk/launcher-json.json";
 
