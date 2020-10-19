@@ -1,4 +1,4 @@
-name: Install Auto Builder
+name: Installer CI
 
 on:
   push:
