@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'tk.bookyclient.installer'
-version 'v1.4b'
+version 'v1.5'
 
 repositories {
     mavenCentral()
