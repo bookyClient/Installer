@@ -20,7 +20,7 @@ import java.nio.file.Files;
 
 public class Boot extends Application {
 
-    public static final String VERSION = "v1.4b";
+    public static final String VERSION = "v1.5";
 
     public static void main(String[] args) {
         System.out.println("Launching bookyClientInstall " + VERSION + "...");
