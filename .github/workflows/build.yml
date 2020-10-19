@@ -3,6 +3,7 @@ name: Install Auto Builder
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
