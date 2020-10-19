@@ -15,7 +15,7 @@ repositories {
 dependencies {
     implementation 'com.google.guava:guava:29.0-jre'
     implementation 'com.google.code.gson:gson:2.8.6'
-    implementation 'org.openjfx:javafx:16-ea+2'
+    implementation fileTree(includes: ['*.jar'], dir: 'libs')
 }
 
 application {
