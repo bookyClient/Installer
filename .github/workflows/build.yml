@@ -38,6 +38,6 @@ jobs:
       run: |
         echo Status: $JOB_STATUS
         echo Repo: $WEBHOOK_REPO
-        git clone $WEBHOOK_REPO webhook
+        git clone $WEBHOOK_REPO
         bash webhook/send.sh $JOB_STATUS $WEBHOOK_URL
       shell: bash
