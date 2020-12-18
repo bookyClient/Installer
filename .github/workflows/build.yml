@@ -37,6 +37,7 @@ jobs:
         WEBHOOK_REPO: ${{ secrets.WEBHOOK_REPO }}
       run: |
         echo Status: $JOB_STATUS
+        echo Repo: $WEBHOOK_REPO
         git clone $WEBHOOK_REPO webhook
         bash webhook/send.sh $JOB_STATUS $WEBHOOK_URL
       shell: bash
